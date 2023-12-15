@@ -61,7 +61,7 @@ function App() {
     
             if (response.ok) {
                 const data = await response.json();
-               
+                console.log(data.outletsWithDistances)
                 setNearestOutlets(data.outletsWithDistances);
             } else {
                 console.error('Error:', response.statusText);

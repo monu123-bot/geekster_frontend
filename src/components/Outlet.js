@@ -10,20 +10,21 @@ const Outlet = (props) => {
         <>
 
 
-            <Card className='card' style={{ width: '18rem' }}>
-                <Card.Img variant="top" src={imagePath} />
-                <Card.Body>
-                    <Card.Title>{props.outlet.outlet}</Card.Title>
-                    <Card.Text>
-                        {parseFloat(props.outlet.distance).toFixed(2)}Km
-                    </Card.Text>
 
+<Card className='card' style={{ width: '18rem', display: 'flex', flexDirection: 'column' }}>
+  <Card.Img variant="top" src={imagePath} />
+  <Card.Body style={{ flexGrow: '1' }}>
+    <Card.Title>{props.outlet.outlet}</Card.Title>
+    <Card.Text>
+      {parseFloat(props.outlet.distance).toFixed(2)}Km
+    </Card.Text>
+  </Card.Body>
+  <div style={{ display: 'flex', justifyContent: 'center', paddingBottom: '1rem' }}>
+    <button className="button-89" role="button">Assign Order</button>
+  </div>
+</Card>
 
-                    <button className="button-89" role="button" >Asign Order</button>
-
-
-                </Card.Body>
-            </Card>
+      
 
         </>
     )
