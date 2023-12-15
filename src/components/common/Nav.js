@@ -3,9 +3,9 @@ import React from 'react'
 const Nav = () => {
   return (
     <nav className="navbar navbar-expand-lg navbar-scroll fixed-top shadow-0 border-bottom border-dark">
-  <div className="container">
-  {/* <Card.Img variant="top" src="logo.png" /> */}
-    <a className="navbar-brand" href="#!"><b>Food Done Right</b> </a>
+  <div className="container" style={{height:'50px',overflow:'visible'}}>
+  <img variant="top" style={{height:"100px",position:'absolute',top:'5px'}} src="/logo1.png" />
+    {/* <a className="navbar-brand" href="#!"><b>Food Done Right</b> </a> */}
     <button className="navbar-toggler" type="button" data-mdb-toggle="collapse"
       data-mdb-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
       aria-label="Toggle navigation">
