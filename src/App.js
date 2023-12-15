@@ -51,7 +51,7 @@ function App() {
     const findNearestOutlets = async () => {
         
         try {
-            const response = await fetch('http://localhost:3001/outlet/findNearestOutlets', {
+            const response = await fetch('https://geekster-backend4.onrender.com/outlet/findNearestOutlets', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json'
