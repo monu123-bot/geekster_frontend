@@ -11,6 +11,8 @@ import OutletLets from './components/OutletLets';
 
 function App() {
     const [userLocation, setUserLocation] = useState({ lat: '', lng: '' });
+    const [isLoading,setIsLoading] = useState(true)
+
     const [nearestOutlets, setNearestOutlets] = useState([]);
     const [address,setAddress] = useState("")
     const [coordinates,setCoordinates] = useState({
@@ -60,6 +62,7 @@ function App() {
             });
     
             if (response.ok) {
+                setIsLoading(false)
                 const data = await response.json();
                 console.log(data.outletsWithDistances)
                 setNearestOutlets(data.outletsWithDistances);
@@ -133,11 +136,14 @@ function App() {
 
         </div>
         </div>
-      
-        
+      { address==='' ? ( <p>Please Search a location...</p>) : (
+        isLoading ? (
+  <p>Loading....</p>
+) : (
+  <OutletLets nearestOutlets={nearestOutlets} />
+))
 
-        <OutletLets nearestOutlets = {nearestOutlets}  />
-
+}
         
       </div>
       </>
